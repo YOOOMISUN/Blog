@@ -20,7 +20,7 @@
     height: 56px;
     background-color: #f7faf6; 
     text-align: -webkit-match-parent;}
-.small{display: block; padding-left: 80px; font: normal 12px/1.2em Arial, Helvetica, sans-serif; 
+.small{display: block; padding-left: 80px; font: normal 15px/1.2em Arial, Helvetica, sans-serif; 
 color: #edf3f6; letter-spacing: 2px;
 }
 .clr {

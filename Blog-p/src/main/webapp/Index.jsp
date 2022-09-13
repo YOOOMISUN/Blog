@@ -20,9 +20,11 @@
 	<!-- header -->
 		<%@ include file="Template-header.jsp" %>
 	
+	<div class="container" style="background-color:white; border-bottom-right-radius: 28px; border-bottom-left-radius: 28px;" >
+	<br>	
+	<br>	
+	<br>	
 	
- <div class="container" style="text-align :center; margin-top: 70px; background-color:white; border-bottom-right-radius: 28px; border-bottom-left-radius: 28px;"  >	
-
 	<% 
 		if(request.getParameter("errorMsg") != null){		
 	%>	
@@ -30,12 +32,14 @@
 	<%		
 		}
 	%>
-	<h1 >INDEX</h1>
+	<div style=" margin-left:auto; margin-right:auto; text-align:center;" >
+	<h1>INDEX</h1>
 	<br>
 	<%
 		if(session.getAttribute("loginId") == null){		// 로그인 한 적 없을때
 			// 세션안에는 object 타입
 	%>
+	
 	<h3>LOGIN</h3>
 	<br>
 	<form action="./loginAction.jsp" method="post" style="display: inline-block; text-align: center;">
@@ -65,6 +69,8 @@
 		<h2><%=session.getAttribute("loginId")%>(<%=session.getAttribute("loginLevel")%>)님 반갑습니다.</h2>
 		<br>
 		<br>
+		<br>
+		<br>
 		<a href="./logout.jsp">로그아웃</a>
 	<%		
 		}
@@ -74,11 +80,20 @@
 			<a href ="./boardList.jsp">게시판&nbsp;</a>
 			<a href ="./guestbook.jsp">방명록&nbsp;</a>
 			<a href ="./diary.jsp">다이어리</a>
-		
+			
+			<br>
+			<br>
+			<br>
+		</div>
 		<br>
-		<br>
+		<br>	
+	<br>
+	<br>
 	</div>
-	</div>
+	<br>
+	<br>
 	
+	
+	</div>
 </body>
 </html>

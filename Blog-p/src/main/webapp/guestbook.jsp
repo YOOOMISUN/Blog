@@ -32,20 +32,21 @@
 </head>
 <body>
 <div class="container-fluid" style="background-color:#c6adf5;">
-		<!-- header -->
-	<%@ include file="Template-header.jsp" %>
-		
+	<!-- header -->
+		<%@ include file="Template-header.jsp" %>
 	
-		<!-- start main -->
+	<div class="container" style="background-color:white; border-bottom-right-radius: 28px; border-bottom-left-radius: 28px;" >
+	<br>	
+	<br>
+	<!-- start main -->
+	<h3 style="font-weight:bold; text-align :center;">방명록</h3>
 		<div class="container" style="background-color:white; text-align :center; display: inline-block; margin-top: 100px;">
 		<%
 				if(session.getAttribute("loginId") != null){	// 로그인 되어있을때만 보여줌
 			%>	
-			<form action="./insertGuestbookAction.jsp" method="post" style=" ">
+			<form action="./insertGuestbookAction.jsp" method="post" >
 				<div>	
 					<textarea rows="3" cols="50" name="guestbookContent"></textarea>
-				</div>
-				<div>
 					<button type="submit">글 입력</button>
 				</div>
 			</form>
@@ -106,34 +107,39 @@
 		<%
 			while(guestbookRs.next()){
 		%>
-		<table border="1" style="height:80px; weight:300px;">	
+		
+		<table style="height:80px; weight:300px;" >	
 				<tr>
+					<td>글</td>
 					<td colspan="4"><%=guestbookRs.getString("guestbookContent")%></td>
 				</tr>
 				<tr>	
+					<td>아이디</td>
 					<td><%=guestbookRs.getString("id")%></td>
+					<td>글쓴날짜</td>
 					<td><%=guestbookRs.getString("createDate")%></td>
-				</tr>
-		</table>
+				
 		<%
 		System.out.println("guestbookNo : " + guestbookRs.getString("guestbookNo"));
 		
-			
 			String loginId = (String)session.getAttribute("loginId");
 			if(loginId != null && loginId.equals(guestbookRs.getString("id"))){
 			// 로그인이 되어있어야하고 guestbook id랑 loginId의 값이 같아야지만 삭제 가능
 		%>
-			    <a class="btn btn-primary"
-                       href="deleteGuestbook.jsp?guestbookNo=<%=guestbookRs.getInt("guestbookNo")%>">삭제</a>
+			  <td> 
+			  	<a class="btn btn-primary"
+                       href="deleteGuestbook.jsp?guestbookNo=<%=guestbookRs.getInt("guestbookNo")%>">삭제</a></td>
 				<!-- 위 조건을 만족해야지 삭제 링크 버튼이 보임 -->
 		<%		
 				}
 			}
 		%>
+		</tr>
+		</table>
 		<br>
 		
 	 <!--  페이징 -->
-		<div class="container">
+		<div class="container" >
 				<ul class="pagination pagination-sm">
                <!--  이전 -->
                 <%
@@ -182,8 +188,14 @@
             </ul>
 			</div> 
 		</div>
+		<br>
+		<br>
+	</div>
+	<br>
 	<br>
 </div>
+
+
 </body>
 </html>
 

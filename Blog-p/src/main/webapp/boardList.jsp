@@ -18,9 +18,9 @@
 	    
 	    
 		Class.forName("org.mariadb.jdbc.Driver");
-		String url = "jdbc:mariadb://localhost:3306/blog";
+		String url = "jdbc:mariadb://3.37.51.139:3306/blog";
 		String dbuser = "root";
-		String dbpw = "1234";
+		String dbpw = "java1234";
 		Connection conn = DriverManager.getConnection(url,dbuser,dbpw);
 		
 		// 메뉴 목록
@@ -79,6 +79,8 @@
 	<br>	
 
 	<!-- left menu -->
+	<br>
+	<br>
 	<div class="row">
 		<div class="col-sm-2">
 		<div class="list-group">
@@ -164,7 +166,7 @@
 		%>
 		
 		<br/>
-		<table class="table table-striped tabel-hover">
+		<table class="table table-striped tabel-hover" style="text-align :center;">
 		<thead>
 			<tr>
 				<th>locationName</th>
@@ -322,7 +324,7 @@
 		 		<%
 		 			}
 		 		%>
-		     	<input type="text" class="form-control" name="word">
+		     	<input type="text" class="form-control" name="word" >
  				<button type="submit" class="btn btn-primary">검색</button>
 					</form>
 					</div>			
@@ -335,8 +337,6 @@
 	<br>
 	
 </div>
-	<%-- 	 <%@ include file="Template-footer.jsp" %>  --%>
-
 <br>
 </div>
 </body>

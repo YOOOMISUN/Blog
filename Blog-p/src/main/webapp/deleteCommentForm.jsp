@@ -15,9 +15,9 @@
 		}
 		
 		Class.forName("org.mariadb.jdbc.Driver");
-		String url = "jdbc:mariadb://localhost:3306/blog";
+		String url = "jdbc:mariadb://3.37.51.139:3306/blog";
 		String dbuser = "root";
-		String dbpw = "1234";
+		String dbpw = "java1234";
 		Connection conn = DriverManager.getConnection(url,dbuser,dbpw);
 		
 		// 메뉴 목록

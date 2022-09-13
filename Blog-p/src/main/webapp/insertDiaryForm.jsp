@@ -35,31 +35,16 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-		<!-- header -->
-	<%@ include file="Template-header.jsp" %>
-		
+	<div class="container-fluid" style="background-color:#c6adf5;">
+	<!-- header -->
+		<%@ include file="Template-header.jsp" %>
 	
-	
-	<!-- left menu -->
-	<div class="container">
-	<div class="row">
-		<div class="col-sm-2">
-		<div class="list-group">
-		  <ul class="nav navbar-nav list-group">
-			<li class="list-group-item" style="background-color : black;"><a href="./boardList.jsp" style = "color : white; font-family: GulimChe; ">전체보기</a></li>
-			<%
-				while(locationRs.next()){
-			%>
-				<li class="list-group-item" ><a style = "color : black;" href="./boardList.jsp?locationNo=<%=locationRs.getString("locationNo")%>"><%=locationRs.getString("locationName") %></a></li>	
-			<%
-				}
-			%>	
-		</ul>
-		
-	</div>
-	</div>
+	<div class="container" style="background-color:white; border-bottom-right-radius:28px; border-bottom-left-radius:28px;" >
+	<br>	
+
 	
 	<!-- insertDiary form -->
+	<div class="container">
 		<div class="col-sm-10">
 			<h1>다이어리 입력</h1>
 			<form action="./insertDiaryAction.jsp?year=<%=year%>&month=<%=month%>&day=<%=day%>" method="post">
@@ -81,7 +66,17 @@
 			</form>
 		</div> <!-- end main -->
 	</div>
+	<br>
+		<br>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </div>
+
 	
 	
 </body>
